@@ -18,7 +18,18 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <a class="btn btn-outline-light my-2 my-sm-0" style="border-radius: 8px;" href="?page=login">Login</a>
+                <?php
+                session_start();
+                if (isset($_SESSION['data'])) {
+                ?>
+                    <a class="btn btn-outline-light my-2 my-sm-0" style="border-radius: 8px;" href="core/utils/session_manager.php">Logout</a>
+                <?php
+                } else {
+                ?>
+                    <a class="btn btn-outline-light my-2 my-sm-0" style="border-radius: 8px;" href="?page=login">Login</a>
+                <?php
+                }
+                ?>
             </form>
         </div>
     </div>
